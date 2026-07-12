@@ -5,70 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leon Houf</title>
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 40px; }
-        header { margin-bottom: 20px; }
-        h1 { color: #0056b3; }
-        h2 { color: #333; margin-top: 20px; }
-        p, li { margin-bottom: 10px; }
-        a { color: #0056b3; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        img.profile-pic { width: 150px; height: 150px; object-fit: cover; margin-right: 20px; }
+        :root {
+            --text: #1a1a1a;
+            --muted: #5c5c5c;
+            --accent: #2b6cb0;
+            --border: #e5e5e5;
+            --bg: #ffffff;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--bg);
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 60px;
+        }
+        header {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+        header img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        header .role-block {
+            flex: 1;
+        }
+        h1 {
+            margin: 0 0 6px 0;
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        header p.role {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+        section {
+            margin-top: 32px;
+        }
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+        p {
+            margin: 0 0 14px 0;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .research-question {
+            font-style: italic;
+            font-size: 1.05rem;
+            font-weight: 500;
+            border-left: 3px solid var(--accent);
+            padding: 4px 0 4px 14px;
+            margin: 12px 0 16px 0;
+            color: var(--text);
+        }
+        ul {
+            padding-left: 20px;
+            margin: 0 0 14px 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s ease;
+        }
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        footer p { margin: 0; }
+        @media (max-width: 560px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            header img {
+                width: 96px;
+                height: 96px;
+            }
+            h1 { font-size: 1.6rem; }
+            body { padding: 32px 20px 40px; font-size: 16px; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Leon Houf</h1>
-        <img src="Leon Houf.jpg" alt="Leon Houf" class="profile-pic">
-        <p>Social scientist using experimental, computational, and interdisciplinary methods.</p>
+        <img src="Leon Houf.jpg" alt="Leon Houf">
+        <div class="role-block">
+            <h1>Dr. Leon Houf</h1>
+            <p class="role">Post-Doctoral researcher in Behavioural Economics, <a href="https://www.kit.edu/english/index.php" target="_blank" rel="noopener">Karlsruhe Institute of Technology (KIT)</a>. Manager of the <a href="https://www.kd2lab.kit.edu/english/index.php" target="_blank" rel="noopener">KD²Lab</a>.</p>
+        </div>
     </header>
 
-    <section>
-        <h2>About</h2>
-        <p>Originally trained as an economist, I now use a wide array of interdisciplinary experimental methods, integrating LLMs, AI and ML as well as ethnographic methods into experimental research.</p> 
-        <p>My research primarily focuses on judgement and decision making of human and AI actors. In 2023 I did a research visit to rural Laos to analyze social networks as part of an interdisciplinary research project between behavioural economics and anthropology. We currently prepare the next visit.</p>
-        <p>Currently, I am a Post-Doc in the area of Behavioural Economics and Manager of the <a href="https://www.kd2lab.kit.edu/english/index.php" target="_blank">KD²Lab</a> at <a href="https://www.kit.edu/english/index.php" target="_blank">Karlsruhe Institue of Technology (KIT)</a> and I am associated with the <a href="https://kd2school.info/" target="_blank">KD²School</a>. Before I worked at the economics faculty of <a href="https://www.awi.uni-heidelberg.de/en" target="_blank">Heidelberg University</a> and was associated with the <a href="https://www.uni-heidelberg.de/en/research/research-profile/fields-of-focus/field-of-focus-iv" target="_blank">field of focus on Self-Regulation and Regulation: Individuals and Societies of Heidelberg University</a>.</p>
+    <section id="intro">
+        <p>I'm a behavioural economist working on human decision-making in organisations, with a background in economics and ongoing interdisciplinary collaborations across information systems, computer science, and anthropology. I am an Associate at the DFG-funded <a href="https://kd2school.info/" target="_blank" rel="noopener">KD²School</a> on Designing Biosignal-Adaptive Systems for Decision-Making.</p>
+        <p>I use experiments and computational methods to study human behaviour, currently in its interaction with AI. I also study the experimental method itself, how it produces knowledge and under what conditions it holds up. My research has two foci:</p>
     </section>
-    <section>
-        <h2>Publication</h2>
-        <ul>
-            <li><b>Trust in the Machine: How contextual factors and personality traits shape algorithm aversion and collaboration.</b> 
-                With Vinícius Ferraz, Thomas Pitz, Jörn Sickmann & Christiane Schwieren. <a href="https://doi.org/10.1016/j.chbr.2024.100578" target="_blank">Computers in Human Behavior Reports (2025).</a> </li>
-        </ul>
+
+    <section id="focus-behaviour">
+        <h2>Behaviour in organisations</h2>
+        <p class="research-question">How do organisations create hidden costs at the intersection of human behaviour and technology?</p>
+        <p>Escalation of commitment is one of the most persistent findings in behavioural science: people keep pouring resources into failing projects long past the point they should walk away. What happens to that dynamic when an AI agent is part of the decision? That's the main project I'm working on now. It sits inside a broader question: how organisations and people, through design and the technology, produce costly decisions they later struggle to explain. Related projects look at chatbots and risk-taking, and at how talking about AI changes who gets picked as a leader.</p>
     </section>
-    <section>
+
+    <section id="focus-method">
+        <h2>Experimental economics as method and object</h2>
+        <p class="research-question">How does experimental economics produce knowledge, and under what conditions does that knowledge hold up and travel?</p>
+        <p>Running the KD²Lab at KIT is where a lot of methodological thinking happens in practice: how experiments get built, how subjects get recruited, which software choices indirectly shape which findings are possible. On the more visible side, I'm involved in several large-scale replication and meta-scientific projects working out which results in behavioural economics actually hold up. A few years ago, an interdisciplinary collaboration took me to rural Laos to run a behavioural experiment with an anthropologist.</p>
+    </section>
+
+    <section id="working-papers">
         <h2>Working Papers</h2>
         <ul>
-            <li><b>Going beyond the in-/out-group dichotomy: Investigating altruism towards middle-groups.</b> With Christiane Schwieren. <i>R&R.</i></li>
-            <li><b>Measuring In-Group Favouritism on Prolific: Experimental Evidence on When Prolific Participants Show Social Preferences</b> Single-authored. </li>
-            <li><b>Between anthropology and behavioural economics – Interdisciplinary complexity in a Laos case study.</b>
-                With Guido Sprenger & Christiane Schwieren.</li>                
-            <li><b>Going beyond the in-/out-group dichotomy: Investigating altruism towards middle-groups.</b> With Christiane Schwieren.</li>
-            <li><b>Motivated sampling of information.</b> With Víncius Ferraz.</li>
-            <li><b>When to get that extra paycheck? – Default Effects on Salary Pay-outs.</b> With Benedikt Vogt & Rik Dillingh. </li>
+            <li>Humans escalate against a human competitor and hold back against an optimising machine in a competitive auction. With Vinicius Ferraz.</li>
+            <li>Anatomy of Strategic Choices in LLMs. With Vinicius Ferraz, Enrico Ferrea, and Rosemarie Nagel.</li>
+            <li>Effect of Chatbot Access on Risk Taking. With Paul Althaus and Christiane Schwieren.</li>
+            <li>Between anthropology and behavioural economics – Interdisciplinary complexity in a Laos case study. With Guido Sprenger and Christiane Schwieren.</li>
+            <li>Going beyond the in-/out-group dichotomy: Investigating altruism towards middle-groups. With Christiane Schwieren.</li>
         </ul>
     </section>
-    <section>
+
+    <section id="publication">
+        <h2>Publication</h2>
+        <ul>
+            <li><a href="https://doi.org/10.1016/j.chbr.2024.100578" target="_blank" rel="noopener"><em>Trust in the Machine: How contextual factors and personality traits shape algorithm aversion and collaboration.</em>With Vinícius Ferraz, Thomas Pitz, Jörn Sickmann, and Christiane Schwieren. <em>Computers in Human Behavior Reports</em>, 2025.</li>
+        </ul>
+    </section>
+
+    <section id="work-in-progress">
+        <h2>Work in Progress</h2>
+        <ul>
+            <li>Governance of Technology in a Team Production Setting. With Petra Nieken.</li>
+            <li>AI, Signalling &amp; Work Slop.</li>
+            <li>Analysis of Human Behaviour in Mixed-Equilibria 2x2 Games. With Vinicius Ferraz and Rosemarie Nagel.</li>
+        </ul>
+    </section>
+
+    <section id="extra-publications">
         <h2>Extra Publications</h2>
         <ul>
-            <li><a href="https://www.pubsonline.informs.org/doi/full/10.1287/mnsc.2023.03556" target="_blank">Reproducibility in Management Science.</a> 
-                As Member of the Management Science Reproducibility Collaboration. 
-                With Fisar, M., Greiner, B., Huber, C., Katok, E., Ozkes, A., and the Management Science Reproducibility Collaboration. 
-                <i>Management Science, 2024.</i> 
-            <li><a href="https://www.beltz.de/978-3-407-36731-0" target="_blank">Mini-Handbuch Moderation.</a> Discusses moderation from classical, digital, and agile methods perspectives. 
-                With Rüdiger Funk & Alexander Zoll. <i>Beltz, 2020</i>. </li>
+            <li><a href="https://www.pubsonline.informs.org/doi/full/10.1287/mnsc.2023.03556" target="_blank" rel="noopener">Reproducibility in Management Science.</a> As member of the Management Science Reproducibility Collaboration. With M. Fišar, B. Greiner, C. Huber, E. Katok, A. Ozkes, and the Management Science Reproducibility Collaboration. <em>Management Science</em>, 2024.</li>
+            <li><a href="https://www.beltz.de/978-3-407-36731-0" target="_blank" rel="noopener">Mini-Handbuch Moderation.</a> Discusses moderation from classical, digital, and agile methods perspectives. With Rüdiger Funk and Alexander Zoll. <em>Beltz</em>, 2020.</li>
         </ul>
     </section>
-    <section>
-        <h2>Education</h2>
+
+    <section id="cv">
+        <h2>CV</h2>
         <ul>
-            <li>PhD in Behavioural Economics, Heidelberg University, 2024</li>
-            <li>MSc in Economic & Financial Research, Maastricht University, 2020</li>
-            <li>BSc in Economics, University of Bonn, 2018</li>
+            <li>Post-Doctoral Researcher and Manager, KD²Lab, KIT (02.2025 – present)</li>
+            <li>Post-Doc, Heidelberg University (08.2024 – 03.2025)</li>
+            <li>PhD in Behavioural Economics, Heidelberg University (2024)</li>
+            <li>MSc in Economic &amp; Financial Research, specialisation in Human Decision Science, Maastricht University (2020)</li>
+            <li>BSc in Economics, University of Bonn (2018)</li>
         </ul>
     </section>
+
     <footer>
-        
-        <p>© Leon Houf 2025. I do not use cookies.</p>
+        <p>© Leon Houf 2026. I do not use cookies.</p>
     </footer>
 </body>
 </html>
